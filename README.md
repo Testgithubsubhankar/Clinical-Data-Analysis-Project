@@ -1,3 +1,5 @@
+Power Bi Dashboard-https://app.fabric.microsoft.com/links/j1jHvyy90y?ctid=18fba71d-17f8-49c6-89b8-2613315bb69d&pbi_source=linkShare
+
 # Clinical-Data-Analysis-Project
 A high-volume clinical data analytics project where I worked with over 20 million rows of clinical data using SQL Server and Power BI.
 
