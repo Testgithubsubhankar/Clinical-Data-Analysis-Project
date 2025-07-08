@@ -35,6 +35,75 @@ Built KPIs to track metrics such as:
 
 Enabled **incremental data refresh** for efficient report updates and **migrated the data pipeline** from SQL Server to MySQL without affecting Power BI reports. Also set up **multiple workspaces** in Power BI for better data governance.
 
+'Clinical Data Analytics Project – Data Flow Architecture'
+
+           +------------------+
+           |  Raw Clinical    |
+           |     Data         |
+           | (CSV, EHR, etc.) |
+           +--------+---------+
+                    |
+                    v
+       +-------------------------+
+       |  SQL Server - Data Lake |
+       |  (Staging Layer)        |
+       +-------------------------+
+                    |
+                    v
+       +--------------------------+
+       | SQL Server - Data        |
+       | Warehouse (Model Layer)  |
+       | - Cleansing              |
+       | - Transformation (T-SQL) |
+       | - Feature Selection      |
+       +------------+-------------+
+                    |
+                    v
+       +----------------------------+
+       |   Power BI Dataflow        |
+       | - Reusable Datasets        |
+       | - Lightweight Transform    |
+       | - Connects to SQL Views    |
+       +------------+---------------+
+                    |
+       +------------v-------------+
+       |   Data Profiling Logic   |
+       | - Mean, Median, Mode     |
+       | - Std Dev, Min/Max       |
+       | - Nulls, Distincts       |
+       | - Frequency Distributions|
+       +------------+-------------+
+                    |
+                    v
+          +----------------------+
+          |   Power BI Desktop   |
+          | - Import/DirectQuery |
+          | - Star Schema Model  |
+          | - Measures & DAX     |
+          +----------+-----------+
+                     |
+                     v
+        +-----------------------------+
+        | Power BI Reports & KPIs     |
+        | - Admissions, Infections    |
+        | - Readmissions, Deaths      |
+        | - Trends Over Time/Hospitals|
+        +-------------+---------------+
+                      |
+                      v
+        +-----------------------------+
+        | Power BI Service Workspaces |
+        | - Role-based Access         |
+        | - Incremental Refresh       |
+        | - Deployment Pipelines      |
+        +-----------------------------+
+
+
+
+
+
+
+
 ---
 
 Snap:
